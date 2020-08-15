@@ -1,10 +1,15 @@
 # test.py
 
-from flask import Flask
+from app import app
+from db_setup import init_db
 
-app = Flask(__name__)
+init_db()
 
 
 @app.route('/')
 def test():
     return "Music Management App"
+
+
+if __name__ == '__main__':
+    app.run()
